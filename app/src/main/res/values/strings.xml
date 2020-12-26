@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">DoAnFinal</string>
+    <string name="notes">Notes</string>
+    <string name="calendar">Calendar</string>
+    <string name="about_us">About us</string>
+    <string name="exit">Exit</string>
+    <string name="exit_caption">Thông báo tắt</string>
+    <string name="exit_content">"Tắt nhé "</string>
+    <string name="yes">Có</string>
+    <string name="no">không</string>
 </resources>

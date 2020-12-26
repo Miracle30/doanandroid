@@ -7,4 +7,9 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- custom màu    -->
+    <color name="xanhReu">#adab76</color>
+    <color name="hongBinz">#ffccd7</color>
+
 </resources>

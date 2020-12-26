@@ -15,4 +15,13 @@
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ImageView
+        android:id="@+id/btnThem"
+        android:layout_width="72dp"
+        android:layout_height="56dp"
+        app:srcCompat="@drawable/ic_baseline_add_24"
+        tools:layout_editor_absoluteX="300dp"
+        tools:layout_editor_absoluteY="618dp"
+        tools:ignore="MissingConstraints,VectorDrawableCompat" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
