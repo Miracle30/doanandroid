@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -17,7 +18,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
@@ -37,8 +37,11 @@ public class MainActivity extends AppCompatActivity {
                 //bb
                 break;
             case R.id.About:
-                //cc
-                break;
+                Intent intent = new Intent(this,About_us.class);
+                final int result=1;
+                startActivityForResult(intent, result);
+
+            break;
             case R.id.Exit:
                 new AlertDialog.Builder(this)
                         .setTitle(R.string.exit_caption)

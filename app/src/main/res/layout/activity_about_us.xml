@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".About_us">
+    <TextView
+
+        android:id="@+id/gioithieu"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:gravity="center"
+        android:text="@string/gioithieu"
+        />
+
+    <TextView
+        android:id="@+id/gioithieuthanhvien"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/gioithieuthanhvien"
+        android:layout_below="@+id/gioithieu"
+        android:textSize="20sp"
+        android:layout_marginLeft="10dp"/>
+    <TextView
+        android:id="@+id/ttv1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ttv1"
+        android:layout_below="@+id/gioithieuthanhvien"
+        android:textSize="30sp"
+        android:layout_marginLeft="10dp"/>
+    <TextView
+        android:id="@+id/ttv2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Trần Hoàng Hải Long"
+        android:layout_below="@+id/ttv1"
+        android:textSize="30sp"
+        android:layout_marginLeft="10dp"/>
+    <TextView
+        android:id="@+id/ttv3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Huỳnh Minh Xuân"
+        android:layout_below="@+id/ttv2"
+        android:textSize="30sp"
+        android:layout_marginLeft="10dp"/>
+    <TextView
+        android:id="@+id/ttv4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Võ Quốc Hậu"
+        android:layout_below="@+id/ttv3"
+        android:textSize="30sp"
+        android:layout_marginLeft="10dp"/>
+    <TextView
+        android:id="@+id/ttv5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Nguyễn Nhật Quang"
+        android:layout_below="@+id/ttv4"
+        android:textSize="30sp"
+        android:layout_marginLeft="10dp"/>
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_below="@+id/ttv5"
+        android:layout_height="fill_parent"
+        android:src="@drawable/iconhutech"
+        />
+</RelativeLayout>
