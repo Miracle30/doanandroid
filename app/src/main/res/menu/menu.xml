@@ -8,8 +8,8 @@
         >
     </item>
     <item
-        android:id="@+id/Calendar"
-        android:title="@string/calendar"
+        android:id="@+id/TodoList"
+        android:title="@string/todo"
         >
     </item>
     <item

@@ -6,7 +6,7 @@
     android:layout_height="fill_parent"
     tools:context=".MainActivity">
     <ImageView
-        android:id="@+id/btnThem"
+        android:id="@+id/them"
         android:layout_width="80dp"
         android:layout_height="60dp"
         android:layout_alignParentEnd="true"

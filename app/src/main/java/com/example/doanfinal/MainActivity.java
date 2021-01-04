@@ -10,14 +10,37 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
+
+    ImageView them;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        addControls();
+        addEvents();
     }
+
+
+
+    private void addControls() {
+        them = findViewById(R.id.them);
+    }
+
+    private void addEvents() {
+        them.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AddTask.class);
+                startActivity(intent);
+            }
+        });
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
@@ -26,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         super.onOptionsItemSelected(item);
@@ -33,15 +57,15 @@ public class MainActivity extends AppCompatActivity {
             case R.id.Notes:
                 //aa
                 break;
-            case R.id.Calendar:
+            case R.id.TodoList:
+
                 //bb
                 break;
             case R.id.About:
                 Intent intent = new Intent(this,About_us.class);
                 final int result=1;
                 startActivityForResult(intent, result);
-
-            break;
+                break;
             case R.id.Exit:
                 new AlertDialog.Builder(this)
                         .setTitle(R.string.exit_caption)

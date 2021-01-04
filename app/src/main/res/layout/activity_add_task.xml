@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddTask">
+    <LinearLayout
+        android:id="@+id/activity_add_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/textBar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/save"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:onClick="save"
+                android:text="@string/save"
+                android:textStyle="bold"
+                android:textSize="30dp" />
+        </RelativeLayout>
+
+        <EditText
+            android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="71dp"
+            android:background="@color/title"
+            android:ems="10"
+            android:hint="@string/title"
+            android:padding="10dp"
+            android:textSize="30dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/time">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginRight="10sp"
+                android:src="@drawable/clock"/>
+            <TextView
+                android:id="@+id/date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:hint="@string/set_date"
+                android:layout_weight="1"
+                android:ems="10"
+                 />
+            <TextView
+                android:id="@+id/time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:ems="10"
+                android:hint="set Time"
+                android:textSize="20dp" />
+        </LinearLayout>
+
+
+        <EditText
+            android:id="@+id/edtTask"
+            android:layout_width="match_parent"
+            android:layout_height="69dp"
+            android:background="@color/task"
+            android:ems="10"
+            android:hint=" Input Sth"
+            android:inputType="textMultiLine" />
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
+

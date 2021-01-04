@@ -1,16 +1,19 @@
 <resources>
     <string name="app_name">DoAnFinal</string>
     <string name="notes">Notes</string>
-    <string name="calendar">Calendar</string>
+    <string name="todo">To do</string>
     <string name="about_us">About us</string>
     <string name="exit">Exit</string>
     <string name="exit_caption">Thông báo tắt</string>
     <string name="exit_content">"Tắt nhé "</string>
     <string name="yes">Có</string>
     <string name="no">không</string>
-    <string name="gioithieu">Chúng tôi là nhóm ...</string>
-    <string name="gioithieuthanhvien">Chúng tôi gồm có các thành viên sau đây: </string>
+    <string name="gioithieu">Nhóm 8</string>
+    <string name="gioithieuthanhvien">Thành viên: </string>
     <string name="ttv1">Đặng Tuấn Dương</string>
+    <string name="save">Save</string>
+    <string name="title">Title</string>
+    <string name="set_date">set Date</string>
 
 
 </resources>
