@@ -14,6 +14,9 @@
     <string name="save">Save</string>
     <string name="title">Title</string>
     <string name="set_date">set Date</string>
+    <string name="note">Note</string>
+    <string name="to_do_list">To do list</string>
+    <string name="tasks">Tasks</string>
 
 
 </resources>

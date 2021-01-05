@@ -2,16 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
 
     >
-    <item
-        android:id="@+id/Notes"
-        android:title="@string/notes"
-        >
-    </item>
-    <item
-        android:id="@+id/TodoList"
-        android:title="@string/todo"
-        >
-    </item>
+<!--    <item-->
+<!--        android:id="@+id/Notes"-->
+<!--        android:title="@string/notes"-->
+<!--        >-->
+<!--    </item>-->
+<!--    <item-->
+<!--        android:id="@+id/TodoList"-->
+<!--        android:title="@string/todo"-->
+<!--        >-->
+<!--    </item>-->
     <item
         android:id="@+id/About"
         android:title="@string/about_us"

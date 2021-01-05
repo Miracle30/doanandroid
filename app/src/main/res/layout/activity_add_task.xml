@@ -85,6 +85,9 @@
             android:hint=" ... Input Sth"
             android:inputType="textMultiLine" />
 
+
     </LinearLayout>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 

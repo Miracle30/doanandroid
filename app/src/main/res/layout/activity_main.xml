@@ -1,36 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+    <Button
+        android:id="@+id/btnNote"
+        android:layout_width="214dp"
+        android:layout_height="111dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:backgroundTint="@color/task"
+        android:text="@string/note"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/btnTask"
+        android:layout_width="wrap_content"
+        android:layout_height="117dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:text="@string/to_do_list"
+        android:textSize="30sp" />
 
 
-        <ImageView
-            android:id="@+id/them"
-            android:layout_width="80dp"
-            android:layout_height="60dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="55dp"
-            android:layout_marginRight="55dp"
-            android:layout_marginBottom="59dp"
-            android:contentDescription="TODO"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.882"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.9"
-            app:srcCompat="@drawable/ic_baseline_add_24"
-            tools:ignore="MissingConstraints,VectorDrawableCompat" />
-    </RelativeLayout>
-
-</RelativeLayout>
+</LinearLayout>

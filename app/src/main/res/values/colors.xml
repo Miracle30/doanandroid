@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+
     <!-- custom màu    -->
     <color name="xanhReu">#adab76</color>
     <color name="hongBinz">#ffccd7</color>
@@ -18,6 +19,13 @@
     <color name="title">#f4f7c5</color>
     <color name="time">#fbc687</color>
     <color name="task">#ea907a</color>
+
+    <!-- màu cho to do list    -->
+
+    <color name="nenTask">#cffffe</color>
+    <color name="fab">#ffb0b0</color>
+    <color name="cbTodo">#00587a</color>
+
 
 
 </resources>

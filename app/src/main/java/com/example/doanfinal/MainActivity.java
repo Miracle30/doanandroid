@@ -11,11 +11,12 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class MainActivity extends AppCompatActivity {
 
-    ImageView them;
+    Button btnTask, btnNote;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,19 +29,32 @@ public class MainActivity extends AppCompatActivity {
 
 
     private void addControls() {
-        them = findViewById(R.id.them);
+        btnTask = findViewById(R.id.btnTask);
+        btnNote = findViewById(R.id.btnNote);
     }
 
     private void addEvents() {
-        them.setOnClickListener(new View.OnClickListener() {
+        btnNote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, AddTask.class);
                 startActivity(intent);
             }
         });
+
+        btnTask.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, TodoListActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
+
+
+
+    // Menu
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
@@ -49,18 +63,11 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
-
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         super.onOptionsItemSelected(item);
         switch (item.getItemId()) {
-            case R.id.Notes:
-                //aa
-                break;
-            case R.id.TodoList:
 
-                //bb
-                break;
             case R.id.About:
                 Intent intent = new Intent(this,About_us.class);
                 final int result=1;
