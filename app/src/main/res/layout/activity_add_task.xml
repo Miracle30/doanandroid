@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".AddTask">
+
     <LinearLayout
         android:id="@+id/activity_add_item"
         android:layout_width="match_parent"
@@ -19,15 +20,15 @@
             android:orientation="horizontal"
             android:padding="10dp">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:id="@+id/imvSave"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:layout_alignParentRight="true"
-                android:onClick="save"
-                android:text="@string/save"
-                android:textStyle="bold"
-                android:textSize="30dp" />
+                android:layout_marginRight="10dp"
+                android:src="@drawable/ic_baseline_save_24" />
         </RelativeLayout>
+
 
         <EditText
             android:id="@+id/title"
@@ -47,38 +48,41 @@
             android:orientation="horizontal"
             android:background="@color/time">
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginRight="10sp"
-                android:src="@drawable/clock"/>
             <TextView
-                android:id="@+id/date"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:hint="@string/set_date"
-                android:layout_weight="1"
-                android:ems="10"
-                 />
-            <TextView
-                android:id="@+id/time"
-                android:layout_width="match_parent"
+                android:id="@+id/tvDate"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:ems="10"
-                android:hint="set Time"
+                android:hint="set Date"
                 android:textSize="20dp" />
+
+<!--            <ImageView-->
+<!--                android:id="@+id/imvClock"-->
+<!--                android:layout_width="30dp"-->
+<!--                android:layout_height="30dp"-->
+<!--                android:layout_marginRight="20sp"-->
+<!--                android:src="@drawable/clock"/>-->
+
+            <ImageView
+                android:id="@+id/imvCalendar"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginRight="20sp"
+                android:src="@drawable/ic_baseline_calendar_today_24"/>
+
+
         </LinearLayout>
 
 
         <EditText
             android:id="@+id/edtTask"
             android:layout_width="match_parent"
-            android:layout_height="69dp"
+            android:layout_height="wrap_content"
             android:background="@color/task"
+            android:padding="10dp"
             android:ems="10"
-            android:hint=" Input Sth"
+            android:hint=" ... Input Sth"
             android:inputType="textMultiLine" />
 
     </LinearLayout>
