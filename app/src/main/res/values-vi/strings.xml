@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">Đồ Án</string>
+    <string name="notes">Ghi Chú</string>
+    <string name="todo">Danh Sách Việc LÀm</string>
+    <string name="about_us">Thông Tin Nhóm </string>
+    <string name="exit">Thoát</string>
+    <string name="exit_caption">Thông báo tắt</string>
+    <string name="exit_content">"Tắt nhé "</string>
+    <string name="yes">Có</string>
+    <string name="no">không</string>
+    <string name="gioithieu">Nhóm 8</string>
+    <string name="gioithieuthanhvien">Thành viên: </string>
+    <string name="ttv1">Đặng Tuấn Dương</string>
+    <string name="save">Lưu</string>
+    <string name="title">Chủ Đề</string>
+    <string name="set_date">Chọn Ngày</string>
+
+    <string name="note">Ghi Chú</string>
+    <string name="to_do_list">Công việc</string>
+    <string name="tasks">Công việc</string>
+
+    <string name="ttv2">Trần Hoàng Hải Long</string>
+    <string name="ttv3">Huỳnh Minh Xuân</string>
+    <string name="ttv4">Võ Quốc Hậu</string>
+    <string name="ttv5">Nguyễn Nhật Quang</string>
+    <string name="input_sth">...Nhập nội dung ghi chú của bạn</string>
+
+
+</resources>

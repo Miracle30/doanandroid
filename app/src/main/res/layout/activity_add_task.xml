@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
                 android:ems="10"
-                android:hint="set Date"
+                android:text="@string/set_date"
                 android:textSize="20dp" />
 
 <!--            <ImageView-->
@@ -82,7 +82,7 @@
             android:background="@color/task"
             android:padding="10dp"
             android:ems="10"
-            android:hint=" ... Input Sth"
+            android:hint="... Input Something ..."
             android:inputType="textMultiLine" />
 
 
