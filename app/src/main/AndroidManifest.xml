@@ -9,7 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DoAnFinal">
+        <activity android:name=".AddNote"
+            android:parentActivityName=".MainActivity">
 
+        </activity>
+
+        <!--        background  -->
         <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,14 +22,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TodoListActivity"
-            android:parentActivityName=".MainActivity"/>
-        <activity android:name=".EditTask" />
-        <activity android:name=".AddTask" />
-        <activity android:name=".About_us" />
-        <activity android:name=".MainActivity">
 
-        </activity>
+        <activity
+            android:name=".TodoListActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".About_us"
+            android:parentActivityName=".MainActivity"/>
+        <activity android:name=".MainActivity"></activity>
     </application>
 
 </manifest>
