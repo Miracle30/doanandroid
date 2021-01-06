@@ -30,7 +30,7 @@ public class AddNote extends AppCompatActivity implements DatePickerDialog.OnDat
     ImageView imvCalendar;
     TextView tvDate;
     NotesAdapter adapter = null;
-    private List<Notes> NotesList = new ArrayList<Notes>();
+    List<Notes> NotesList = new ArrayList<Notes>();
 
     public class NotesAdapter extends ArrayAdapter<Notes>{
         public NotesAdapter(Context context,int textViewResourceId){

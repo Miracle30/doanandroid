@@ -20,92 +20,85 @@ import com.example.utils.DatabaseHandler;
 
 import java.util.List;
 
-public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.ViewHolder> {
-    private List<TaskModel> todoList;
+public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.MyViewHolder> {
+    private List<TaskModel> mList;
     private TodoListActivity activity;
-    private DatabaseHandler db;
+    private DatabaseHandler myDB;
 
-    public TaskAdapter(DatabaseHandler db, TodoListActivity activity){
-        this.db = db;
+    public TaskAdapter(DatabaseHandler myDB , TodoListActivity activity){
         this.activity = activity;
-    }//khuc sau no xoa @@
+        this.myDB = myDB;
+    }
+
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType){
-        View itemView = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.task_layout,parent, false);
-        return new ViewHolder(itemView);
+    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.task_layout , parent , false);
+        return new MyViewHolder(v);
     }
+
     @Override
-    public void onBindViewHolder(@NonNull final ViewHolder holder, int position){
-        db.openDb();
-
-
-        TaskModel item = todoList.get(position);
-        holder.task.setText(item.getTask());
-        holder.task.setChecked(toBoolean(item.getStatus()));
-        holder.task.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+    public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+        final TaskModel item = mList.get(position);
+        holder.mCheckBox.setText(item.getTask());
+        holder.mCheckBox.setChecked(toBoolean(item.getStatus()));
+        holder.mCheckBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if (isChecked) {
-                    db.updateStatus(item.getId(), 1);
-                } else {
-                    db.updateStatus(item.getId(), 0);
-                }
+                if (isChecked){
+                    myDB.updateStatus(item.getId() , 1);
+                }else
+                    myDB.updateStatus(item.getId() , 0);
             }
         });
-
     }
-    public Context getContext() {
+
+    public boolean toBoolean(int num){
+        return num!=0;
+    }
+
+    public Context getContext(){
         return activity;
     }
 
-    public  int getItemCount(){
-        return todoList.size();
-    }
-
-    private boolean toBoolean(int n){
-        return n!=0;
-    }
-
-    public void setTask(List<TaskModel> todoList){
-        this.todoList = todoList;
+    public void setTasks(List<TaskModel> mList){
+        this.mList = mList;
         notifyDataSetChanged();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder{
-        CheckBox task;
-
-        ViewHolder(View view){
-            super(view);
-            task = view.findViewById(R.id.cbTodo);
-        }
-    }
-
-
-    public void setTasks(List<TaskModel> todoList) {
-        this.todoList = todoList;
-        notifyDataSetChanged();
-    }
-
-    public void deleteItem(int position) {
-        TaskModel item = todoList.get(position);
-        db.deleteTask(item.getId());
-        todoList.remove(position);
+    public void deletTask(int position){
+        TaskModel item = mList.get(position);
+        myDB.deleteTask(item.getId());
+        mList.remove(position);
         notifyItemRemoved(position);
     }
 
-    public void editItem(int position) {
-        TaskModel item = todoList.get(position);
+    public void editItem(int position){
+        TaskModel item = mList.get(position);
+
         Bundle bundle = new Bundle();
-        bundle.putInt("id", item.getId());
-        bundle.putString("task", item.getTask());
-        AddTask fragment = new AddTask();
-        fragment.setArguments(bundle);
-        fragment.show(activity.getSupportFragmentManager(), AddTask.TAG);
+        bundle.putInt("id" , item.getId());
+        bundle.putString("task" , item.getTask());
+
+        AddTask task = new AddTask();
+        task.setArguments(bundle);
+        task.show(activity.getSupportFragmentManager() , task.getTag());
+
+
     }
 
+    @Override
+    public int getItemCount() {
+        return mList.size();
+    }
 
+    public static class MyViewHolder extends RecyclerView.ViewHolder{
+        CheckBox mCheckBox;
+        public MyViewHolder(@NonNull View itemView) {
+            super(itemView);
+            mCheckBox = itemView.findViewById(R.id.cbTodo);
+        }
+    }
 
 }

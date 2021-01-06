@@ -16,13 +16,55 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.adapter.TaskAdapter;
 
 public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback{
-    private TaskAdapter adapter;
+//    private final TaskAdapter adapter;
+//
+//    public RecyclerItemTouchHelper(TaskAdapter adapter) {
+//        super(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT);
+//        this.adapter = adapter;
+//    }
+//
+//
+//    @Override
+//    public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+//        return false;
+//    }
+//
+//    @Override
+//    public void onSwiped(@NonNull final RecyclerView.ViewHolder viewHolder, int direction) {
+//        final int position = viewHolder.getAdapterPosition();
+//        if (direction == ItemTouchHelper.LEFT) {
+//            AlertDialog.Builder builder = new AlertDialog.Builder(adapter.getContext());
+//            builder.setTitle("Delete Task");
+//            builder.setMessage("Are you sure you want to delete this Task?");
+//            builder.setPositiveButton("Confirm",
+//                    new DialogInterface.OnClickListener() {
+//                        @Override
+//                        public void onClick(DialogInterface dialog, int which) {
+//                            adapter.deleteItem(position);
+//                        }
+//                    });
+//
+//            builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+//                @Override
+//                public void onClick(DialogInterface dialog, int which) {
+//                    adapter.notifyItemChanged(viewHolder.getAdapterPosition());
+//                }
+//            });
+//            AlertDialog dialog = builder.create();
+//            dialog.show();
+//        } else {
+//            adapter.editItem(position);
+//        }
+//    }
+//
+
+
+    private final TaskAdapter adapter;
 
     public RecyclerItemTouchHelper(TaskAdapter adapter) {
         super(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT);
         this.adapter = adapter;
     }
-
 
     @Override
     public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
@@ -30,35 +72,35 @@ public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback{
     }
 
     @Override
-    public void onSwiped(@NonNull final RecyclerView.ViewHolder viewHolder, int direction) {
+    public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
         final int position = viewHolder.getAdapterPosition();
-        if (direction == ItemTouchHelper.LEFT) {
+        if (direction == ItemTouchHelper.RIGHT){
             AlertDialog.Builder builder = new AlertDialog.Builder(adapter.getContext());
             builder.setTitle("Delete Task");
-            builder.setMessage("Are you sure you want to delete this Task?");
-            builder.setPositiveButton("Confirm",
-                    new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            adapter.deleteItem(position);
-                        }
-                    });
-
-            builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
+            builder.setMessage("Are You Sure ?");
+            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    adapter.notifyItemChanged(viewHolder.getAdapterPosition());
+                    adapter.deletTask(position);
+                }
+            });
+
+            builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    adapter.notifyItemChanged(position);
                 }
             });
             AlertDialog dialog = builder.create();
             dialog.show();
-        } else {
+        }else{
             adapter.editItem(position);
         }
     }
 
     @Override
     public void onChildDraw(@NonNull Canvas c, @NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, float dX, float dY, int actionState, boolean isCurrentlyActive) {
+
         super.onChildDraw(c, recyclerView, viewHolder, dX, dY, actionState, isCurrentlyActive);
 
         Drawable icon;
@@ -67,7 +109,7 @@ public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback{
         View itemView = viewHolder.itemView;
         int backgroundCornerOffset = 20;
 
-        if (dX > 0) {
+        if (dX < 0) {
             icon = ContextCompat.getDrawable(adapter.getContext(), R.drawable.ic_baseline_edit);
             background = new ColorDrawable(ContextCompat.getColor(adapter.getContext(), R.color.color1));
         } else {
@@ -101,4 +143,5 @@ public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback{
         background.draw(c);
         icon.draw(c);
     }
+
 }

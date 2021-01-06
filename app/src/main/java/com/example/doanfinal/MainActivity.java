@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-
     private void addControls() {
         btnTask = findViewById(R.id.btnTask);
         btnNote = findViewById(R.id.btnNote);
