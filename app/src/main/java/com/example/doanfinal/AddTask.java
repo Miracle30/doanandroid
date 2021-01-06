@@ -27,9 +27,8 @@ import java.util.Objects;
 public class AddTask  extends BottomSheetDialogFragment {
     public static final String TAG = "AddTask";
 
-    //widgets
-    private EditText mEditText;
-    private Button mSaveButton;
+    EditText mEditText;
+    Button mSaveButton;
 
     private DatabaseHandler myDb;
 
@@ -65,8 +64,9 @@ public class AddTask  extends BottomSheetDialogFragment {
             if (task.length() > 0 ){
                 mSaveButton.setEnabled(false);
             }
-
         }
+
+        //thay doi chuoi dung textWatcher
         mEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -89,6 +89,8 @@ public class AddTask  extends BottomSheetDialogFragment {
 
             }
         });
+
+        //Save lai
         final boolean finalIsUpdate = isUpdate;
         mSaveButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -96,11 +98,13 @@ public class AddTask  extends BottomSheetDialogFragment {
                 String text = mEditText.getText().toString();
 
                 if (finalIsUpdate){
+                    //goi method update theo id
                     myDb.updateTask(bundle.getInt("id") , text);
                 }else{
                     TaskModel item = new TaskModel();
                     item.setTask(text);
                     item.setStatus(0);
+                    //insert vao db
                     myDb.insertTask(item);
                 }
                 dismiss();

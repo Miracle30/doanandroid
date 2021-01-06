@@ -11,9 +11,10 @@
         android:id="@+id/tvTask"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20sp"
+        android:layout_margin="20dp"
+        android:layout_centerHorizontal="true"
         android:text="@string/tasks"
-        android:textColor="@color/black"
+        android:textColor="@color/textColor"
         android:textSize="32sp"
         android:textStyle="bold" />
 

@@ -16,48 +16,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.adapter.TaskAdapter;
 
 public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback{
-//    private final TaskAdapter adapter;
-//
-//    public RecyclerItemTouchHelper(TaskAdapter adapter) {
-//        super(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT);
-//        this.adapter = adapter;
-//    }
-//
-//
-//    @Override
-//    public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
-//        return false;
-//    }
-//
-//    @Override
-//    public void onSwiped(@NonNull final RecyclerView.ViewHolder viewHolder, int direction) {
-//        final int position = viewHolder.getAdapterPosition();
-//        if (direction == ItemTouchHelper.LEFT) {
-//            AlertDialog.Builder builder = new AlertDialog.Builder(adapter.getContext());
-//            builder.setTitle("Delete Task");
-//            builder.setMessage("Are you sure you want to delete this Task?");
-//            builder.setPositiveButton("Confirm",
-//                    new DialogInterface.OnClickListener() {
-//                        @Override
-//                        public void onClick(DialogInterface dialog, int which) {
-//                            adapter.deleteItem(position);
-//                        }
-//                    });
-//
-//            builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
-//                @Override
-//                public void onClick(DialogInterface dialog, int which) {
-//                    adapter.notifyItemChanged(viewHolder.getAdapterPosition());
-//                }
-//            });
-//            AlertDialog dialog = builder.create();
-//            dialog.show();
-//        } else {
-//            adapter.editItem(position);
-//        }
-//    }
-//
-
 
     private final TaskAdapter adapter;
 
@@ -71,6 +29,7 @@ public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback{
         return false;
     }
 
+    //swipe man hinh
     @Override
     public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
         final int position = viewHolder.getAdapterPosition();
@@ -78,6 +37,7 @@ public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback{
             AlertDialog.Builder builder = new AlertDialog.Builder(adapter.getContext());
             builder.setTitle("Delete Task");
             builder.setMessage("Are You Sure ?");
+
             builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
@@ -91,6 +51,7 @@ public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback{
                     adapter.notifyItemChanged(position);
                 }
             });
+
             AlertDialog dialog = builder.create();
             dialog.show();
         }else{
@@ -114,7 +75,7 @@ public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback{
             background = new ColorDrawable(ContextCompat.getColor(adapter.getContext(), R.color.color1));
         } else {
             icon = ContextCompat.getDrawable(adapter.getContext(), R.drawable.ic_baseline_delete);
-            background = new ColorDrawable(Color.RED);
+            background = new ColorDrawable(ContextCompat.getColor(adapter.getContext(), R.color.color2));
         }
 
         assert icon != null;
@@ -122,21 +83,21 @@ public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback{
         int iconTop = itemView.getTop() + (itemView.getHeight() - icon.getIntrinsicHeight()) / 2;
         int iconBottom = iconTop + icon.getIntrinsicHeight();
 
-        if (dX > 0) { // Swiping to the right
+        if (dX > 0) { // Luot sang phai
             int iconLeft = itemView.getLeft() + iconMargin;
             int iconRight = itemView.getLeft() + iconMargin + icon.getIntrinsicWidth();
             icon.setBounds(iconLeft, iconTop, iconRight, iconBottom);
 
             background.setBounds(itemView.getLeft(), itemView.getTop(),
                     itemView.getLeft() + ((int) dX) + backgroundCornerOffset, itemView.getBottom());
-        } else if (dX < 0) { // Swiping to the left
+        } else if (dX < 0) { // Luot sang trai
             int iconLeft = itemView.getRight() - iconMargin - icon.getIntrinsicWidth();
             int iconRight = itemView.getRight() - iconMargin;
             icon.setBounds(iconLeft, iconTop, iconRight, iconBottom);
 
             background.setBounds(itemView.getRight() + ((int) dX) - backgroundCornerOffset,
                     itemView.getTop(), itemView.getRight(), itemView.getBottom());
-        } else { // view is unSwiped
+        } else {
             background.setBounds(0, 0, 0, 0);
         }
 

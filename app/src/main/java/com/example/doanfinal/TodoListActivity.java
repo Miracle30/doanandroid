@@ -86,35 +86,47 @@ public class TodoListActivity extends AppCompatActivity implements DialogCloseLi
     private DatabaseHandler myDB;
     private List<TaskModel> mList;
     private TaskAdapter adapter;
+    ItemTouchHelper itemTouchHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_todo_list);
 
-        mRecyclerview = findViewById(R.id.taskRV);
+        addControls();
+        addEvents();
+    }
+
+    private void addControls() {
         fab = findViewById(R.id.fab);
+        mRecyclerview = findViewById(R.id.taskRV);
         myDB = new DatabaseHandler(TodoListActivity.this);
         mList = new ArrayList<>();
         adapter = new TaskAdapter(myDB , TodoListActivity.this);
+
 
         mRecyclerview.setHasFixedSize(true);
         mRecyclerview.setLayoutManager(new LinearLayoutManager(this));
         mRecyclerview.setAdapter(adapter);
 
-        mList = myDB.getAllTasks();
-        Collections.reverse(mList);
-        adapter.setTasks(mList);
+        itemTouchHelper = new ItemTouchHelper(new RecyclerItemTouchHelper(adapter));
+    }
 
+    private void addEvents() {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AddTask.newInstance().show(getSupportFragmentManager() , AddTask.TAG);
             }
         });
-        ItemTouchHelper itemTouchHelper = new ItemTouchHelper(new RecyclerItemTouchHelper(adapter));
+
+        mList = myDB.getAllTasks();
+        Collections.reverse(mList);
+        adapter.setTasks(mList);
+
         itemTouchHelper.attachToRecyclerView(mRecyclerview);
     }
+
 
     @Override
     public void handleDialogClose(DialogInterface dialog) {
@@ -123,6 +135,5 @@ public class TodoListActivity extends AppCompatActivity implements DialogCloseLi
         adapter.setTasks(mList);
         adapter.notifyDataSetChanged();
     }
-
 
 }

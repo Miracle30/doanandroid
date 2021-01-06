@@ -7,6 +7,8 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="textColor">#92817a</color>
+
 
 
     <!-- custom màu    -->
@@ -26,7 +28,7 @@
     <color name="fab">#ffb0b0</color>
     <color name="cbTodo">#00587a</color>
 
-    <!--     -->
+    <!--   mau cho swipe  -->
     <color name="color1">#d399d6</color>
     <color name="color2">#adcf5e</color>
 

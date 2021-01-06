@@ -2,8 +2,11 @@ package com.example.model;
 
 public class TaskModel {
     private int id, status;
+
     private String task;
 
+    public TaskModel() {
+    }
 
     public int getId() {
         return id;

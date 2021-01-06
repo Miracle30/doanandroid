@@ -29,7 +29,10 @@
         <activity
             android:name=".About_us"
             android:parentActivityName=".MainActivity"/>
-        <activity android:name=".MainActivity"></activity>
+
+        <activity android:name=".MainActivity">
+
+        </activity>
     </application>
 
 </manifest>

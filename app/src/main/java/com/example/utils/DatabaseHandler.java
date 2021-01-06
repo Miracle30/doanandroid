@@ -17,17 +17,18 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     private SQLiteDatabase db;
 
-    private static  final String DATABASE_NAME = "TODO_DATABASE";
-    private static  final String TABLE_NAME = "TODO_TABLE";
-    private static  final String COL_1 = "ID";
-    private static  final String COL_2 = "TASK";
-    private static  final String COL_3 = "STATUS";
+    private static final String DATABASE_NAME = "TODO_DATABASE";
+    private static final String TABLE_NAME = "TODO_TABLE";
+    private static final String COL_1 = "ID";
+    private static final String COL_2 = "TASK";
+    private static final String COL_3 = "STATUS";
 
 
     public DatabaseHandler(@Nullable Context context ) {
         super(context, DATABASE_NAME, null, 1);
     }
 
+    //tao bang
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("CREATE TABLE IF NOT EXISTS " + TABLE_NAME + "(ID INTEGER PRIMARY KEY AUTOINCREMENT , TASK TEXT , STATUS INTEGER)");
@@ -39,6 +40,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
+    //insert vao bang
     public void insertTask(TaskModel model){
         db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -47,6 +49,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.insert(TABLE_NAME , null , values);
     }
 
+    //update cong viec
     public void updateTask(int id , String task){
         db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -54,6 +57,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.update(TABLE_NAME , values , "ID=?" , new String[]{String.valueOf(id)});
     }
 
+    //update trang thai
     public void updateStatus(int id , int status){
         db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
@@ -61,11 +65,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.update(TABLE_NAME , values , "ID=?" , new String[]{String.valueOf(id)});
     }
 
+    //xoa cong viec
     public void deleteTask(int id ){
         db = this.getWritableDatabase();
         db.delete(TABLE_NAME , "ID=?" , new String[]{String.valueOf(id)});
     }
 
+    //get all task
     public List<TaskModel> getAllTasks(){
 
         db = this.getWritableDatabase();
