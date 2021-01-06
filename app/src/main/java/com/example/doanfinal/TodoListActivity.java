@@ -16,7 +16,6 @@ public class TodoListActivity extends AppCompatActivity {
 
     private RecyclerView tasksRecyclerView;
     private TaskAdapter taskAdapter;
-
     private List<TaskModel> taskList;
 
 
