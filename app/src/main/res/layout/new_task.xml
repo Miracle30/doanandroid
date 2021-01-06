@@ -3,25 +3,25 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="match_parent"
-    android:layout_margin="5dp">
+    android:layout_margin="10dp">
 
     <EditText
         android:id="@+id/newTaskText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@null"
-        android:hint="New Task"
+        android:textSize="20sp"
+        android:hint="@string/new_task"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
     <Button
         android:id="@+id/newTaskButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="108dp"
+        android:layout_height="65dp"
         android:layout_below="@id/newTaskText"
         android:layout_alignParentEnd="true"
-        android:textSize="16sp"
-        android:text="Save"
         android:layout_alignParentRight="true"
-        />
+        android:text="@string/save"
+        android:textSize="20sp" />
 
 </RelativeLayout>

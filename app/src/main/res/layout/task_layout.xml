@@ -17,7 +17,8 @@
             android:id="@+id/cbTodo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            tool:text="Công việc 1"
+            android:layout_centerHorizontal="true"
+            tool:text="Task1"
             android:padding="8dp"
             android:buttonTint="@color/cbTodo"
             />

@@ -15,6 +15,7 @@
     <string name="title">Chủ Đề</string>
     <string name="set_date">Chọn Ngày</string>
 
+
     <string name="note">Ghi Chú</string>
     <string name="to_do_list">Công việc</string>
     <string name="tasks">Công việc</string>
@@ -24,6 +25,6 @@
     <string name="ttv4">Võ Quốc Hậu</string>
     <string name="ttv5">Nguyễn Nhật Quang</string>
     <string name="input_sth">...Nhập nội dung ghi chú của bạn</string>
-
+    <string name="new_task">Cong viec moi</string>
 
 </resources>

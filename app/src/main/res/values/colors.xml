@@ -26,6 +26,8 @@
     <color name="fab">#ffb0b0</color>
     <color name="cbTodo">#00587a</color>
 
-
+    <!--     -->
+    <color name="color1">#d399d6</color>
+    <color name="color2">#adcf5e</color>
 
 </resources>

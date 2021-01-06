@@ -12,7 +12,7 @@
     <string name="gioithieu">Team 8</string>
     <string name="gioithieuthanhvien">Team member:  </string>
 
-    <string name="save">Save</string>
+
     <string name="title">Title</string>
 
     <string name="set_date">Set Date</string>
@@ -29,5 +29,7 @@
     <string name="ttv4">Vo Quoc Hau</string>
     <string name="ttv5">Nguyen Nhat Quang</string>
     <string name="input_sth">... Input Something ...</string>
+    <string name="save">Save</string>
+    <string name="new_task">New Task</string>
 
 </resources>
