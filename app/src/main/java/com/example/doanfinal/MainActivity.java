@@ -34,25 +34,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void addEvents() {
-        btnNote.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, AddNote.class);
-                startActivity(intent);
-            }
+        btnNote.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, AddNote.class);
+            startActivity(intent);
         });
 
-        btnTask.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, TodoListActivity.class);
-                startActivity(intent);
-            }
+        btnTask.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, TodoListActivity.class);
+            startActivity(intent);
         });
     }
-
-
-
 
     // Menu
     @Override
@@ -67,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         super.onOptionsItemSelected(item);
         switch (item.getItemId()) {
-
             case R.id.About:
                 Intent intent = new Intent(this,About_us.class);
                 final int result=1;
@@ -92,7 +82,6 @@ public class MainActivity extends AppCompatActivity {
                             }
                         })
                         .show();
-
                 break;
         }
         return true;
