@@ -54,6 +54,8 @@ public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback{
 
             AlertDialog dialog = builder.create();
             dialog.show();
+            //set k cho ng dung bam ngoai
+            dialog.setCanceledOnTouchOutside(false);
         }else{
             adapter.editItem(position);
         }
@@ -70,12 +72,13 @@ public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback{
         View itemView = viewHolder.itemView;
         int backgroundCornerOffset = 20;
 
-        if (dX < 0) {
-            icon = ContextCompat.getDrawable(adapter.getContext(), R.drawable.ic_baseline_edit);
-            background = new ColorDrawable(ContextCompat.getColor(adapter.getContext(), R.color.color1));
-        } else {
+        //luot sang phai
+        if (dX > 0) {
             icon = ContextCompat.getDrawable(adapter.getContext(), R.drawable.ic_baseline_delete);
-            background = new ColorDrawable(ContextCompat.getColor(adapter.getContext(), R.color.color2));
+            background = new ColorDrawable(ContextCompat.getColor(adapter.getContext(), R.color.colorDelete));
+        } else {
+            icon = ContextCompat.getDrawable(adapter.getContext(), R.drawable.ic_baseline_edit);
+            background = new ColorDrawable(ContextCompat.getColor(adapter.getContext(), R.color.colorEdit));
         }
 
         assert icon != null;

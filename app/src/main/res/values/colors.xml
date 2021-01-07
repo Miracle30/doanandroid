@@ -10,16 +10,17 @@
     <color name="textColor">#92817a</color>
 
 
-
     <!-- custom màu    -->
     <color name="xanhReu">#adab76</color>
     <color name="hongBinz">#ffccd7</color>
     <color name="tuNgayEmDen">#85DCB0</color>
 
-    <!-- custom màu  cho Add Task  -->
-    <color name="save">#aacdbe</color>
+    <!-- custom màu  cho Task va Note  -->
+    <color name="save">#bedbbb</color>
     <color name="title">#f4f7c5</color>
     <color name="time">#fbc687</color>
+
+    <color name="note">#92817a</color>
     <color name="task">#ea907a</color>
 
     <!-- màu cho to do list    -->
@@ -29,7 +30,9 @@
     <color name="cbTodo">#00587a</color>
 
     <!--   mau cho swipe  -->
-    <color name="color1">#d399d6</color>
-    <color name="color2">#adcf5e</color>
+    <color name="colorDelete">#bb2205</color>
+    <color name="colorEdit">#adcf5e</color>
+
+
 
 </resources>

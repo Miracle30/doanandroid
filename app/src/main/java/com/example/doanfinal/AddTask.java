@@ -40,8 +40,7 @@ public class AddTask  extends BottomSheetDialogFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.new_task, container , false);
-        return view;
+        return inflater.inflate(R.layout.new_task, container , false);
     }
 
     @Override
@@ -61,6 +60,7 @@ public class AddTask  extends BottomSheetDialogFragment {
             String task = bundle.getString("task");
             mEditText.setText(task);
 
+            assert task != null;
             if (task.length() > 0 ){
                 mSaveButton.setEnabled(false);
             }
@@ -77,10 +77,10 @@ public class AddTask  extends BottomSheetDialogFragment {
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 if (s.toString().equals("")){
                     mSaveButton.setEnabled(false);
-                    mSaveButton.setBackgroundColor(Color.GRAY);
+                    mSaveButton.setBackgroundColor(getResources().getColor(R.color.hongBinz));
                 }else{
                     mSaveButton.setEnabled(true);
-                    mSaveButton.setBackgroundColor(getResources().getColor(R.color.color1));
+                    mSaveButton.setBackgroundColor(getResources().getColor(R.color.save));
                 }
             }
 
