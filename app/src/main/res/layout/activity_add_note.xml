@@ -1,103 +1,106 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AddNote">
-
-
+<TabHost
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@android:id/tabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
     <LinearLayout
-        android:id="@+id/activity_add_item"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <RelativeLayout
-            android:id="@+id/textBar"
+        android:layout_height="match_parent">
+        <TabWidget
+            android:id="@android:id/tabs"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/save"
-            android:orientation="horizontal"
-            android:padding="10dp">
-
-            <Button
-                android:id="@+id/Save"
-                android:layout_width="100dp"
-                android:layout_height="50dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="10dp"
-                android:text="Save"
-                android:textSize="20dp"
-                />
-            <!--            <ImageView-->
-            <!--                android:id="@+id/imvSave"-->
-            <!--                android:layout_width="50dp"-->
-            <!--                android:layout_height="50dp"-->
-            <!--                android:layout_alignParentRight="true"-->
-            <!--                android:layout_marginRight="10dp"-->
-            <!--                android:src="@drawable/ic_baseline_save_24" />-->
-        </RelativeLayout>
-
-
-        <EditText
-            android:id="@+id/title"
-            android:layout_width="match_parent"
-            android:layout_height="71dp"
-            android:background="@color/title"
-            android:ems="10"
-            android:hint="@string/title"
-            android:padding="10dp"
-            android:textSize="30dp"
-            android:textStyle="bold" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:padding="10dp"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@color/time">
-
-            <TextView
-                android:id="@+id/tvDate"
-                android:layout_width="200dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="2"
-                android:ems="10"
-                android:hint="set Date"
-                android:textSize="20dp" />
-
-            <!--            <ImageView-->
-            <!--                android:id="@+id/imvClock"-->
-            <!--                android:layout_width="30dp"-->
-            <!--                android:layout_height="30dp"-->
-            <!--                android:layout_marginRight="20sp"-->
-            <!--                android:src="@drawable/clock"/>-->
-
-            <ImageView
-                android:id="@+id/imvCalendar"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginRight="20sp"
-                android:src="@drawable/ic_baseline_calendar_today_24"/>
-
-
-        </LinearLayout>
-
-
-        <EditText
-            android:id="@+id/edtTask"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/task"
-            android:padding="10dp"
-            android:ems="10"
-            android:hint=" ... Input Sth"
-            android:inputType="textMultiLine" />
-        <ListView
-            android:id="@+id/listnote123"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        <FrameLayout android:id="@android:id/tabcontent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <ListView
+                android:id="@+id/notes"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+            <TableLayout
+                android:id="@+id/AddTask"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:stretchColumns="1"
+                android:paddingTop="4dip" >
+                <TableRow>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:padding="10dp"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                    <ScrollView
+                        android:layout_width="fill_parent"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/tvinput"
+                        android:background="@color/white">
+
+                            <EditText android:id="@+id/title3"
+                                android:layout_width="400dp"
+                                android:layout_height="wrap_content"
+                                android:hint="Add title"
+                                android:textSize="32sp"/>
+                    </ScrollView>
+                    </LinearLayout>
+
+                </TableRow>
+                <TableRow>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:padding="10dp"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+                        <ScrollView
+                            android:layout_width="fill_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/tvinput"
+                            android:background="@color/white">
+
+                            <EditText
+                                android:id="@+id/addnotes"
+                                android:layout_width="400dp"
+                                android:layout_height="wrap_content"
+
+                                android:textSize="32sp"
+                                android:hint="Muốn note gì thì ghi vào đây"
+
+                                />
+
+                        </ScrollView>
+
+                    </LinearLayout>
+                </TableRow>
+                <TableRow>
+                    <RelativeLayout
+                        android:id="@+id/textBar"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <Button
+                            android:id="@+id/Save"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="10dp"
+                            android:text="Save"
+                            android:textSize="20dp"
+                            />
+                        <!--            <ImageView-->
+                        <!--                android:id="@+id/imvSave"-->
+                        <!--                android:layout_width="50dp"-->
+                        <!--                android:layout_height="50dp"-->
+                        <!--                android:layout_alignParentRight="true"-->
+                        <!--                android:layout_marginRight="10dp"-->
+                        <!--                android:src="@drawable/ic_baseline_save_24" />-->
+                    </RelativeLayout>
+                </TableRow>
+
+
+            </TableLayout>
+        </FrameLayout>
     </LinearLayout>
 
-</LinearLayout>
+</TabHost>
