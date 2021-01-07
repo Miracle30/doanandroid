@@ -7,22 +7,42 @@
     android:background="@color/nenTask"
     tools:context=".TodoListActivity">
 
-    <TextView
-        android:id="@+id/tvTask"
+    <LinearLayout
+        android:id="@+id/LayoutTitle"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_height="79dp"
         android:layout_centerHorizontal="true"
-        android:text="@string/tasks"
-        android:textColor="@color/textColor"
-        android:textSize="32sp"
-        android:textStyle="bold" />
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="85dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:src="@drawable/check_icon" />
+
+        <TextView
+            android:id="@+id/tvTask"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="@string/tasks"
+            android:textColor="@color/textColor"
+            android:textSize="32sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/taskRV"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvTask"
+        android:layout_below="@+id/LayoutTitle"
         android:layout_margin="20sp"
         android:nestedScrollingEnabled="true"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>

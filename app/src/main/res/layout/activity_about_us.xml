@@ -7,8 +7,8 @@
     android:layout_height="fill_parent"
     tools:context=".About_us">
     <TextView
-
         android:id="@+id/gioithieu"
+        android:layout_margin="20sp"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textSize="30sp"
@@ -23,19 +23,24 @@
         android:text="@string/gioithieuthanhvien"
         android:layout_below="@+id/gioithieu"
         android:textSize="24sp"
+        android:layout_margin="5dp"
+        android:gravity="center"
         android:layout_marginLeft="10dp"/>
+
     <TextView
         android:id="@+id/ttv1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/ttv1"
         android:layout_below="@+id/gioithieuthanhvien"
+        android:gravity="center"
         android:textSize="30sp"
         android:layout_marginLeft="10dp"/>
     <TextView
         android:id="@+id/ttv2"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="@string/ttv2"
         android:layout_below="@+id/ttv1"
         android:textSize="30sp"
@@ -44,6 +49,7 @@
         android:id="@+id/ttv3"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="@string/ttv3"
         android:layout_below="@+id/ttv2"
         android:textSize="30sp"
@@ -52,6 +58,7 @@
         android:id="@+id/ttv4"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="@string/ttv4"
         android:layout_below="@+id/ttv3"
         android:textSize="30sp"
@@ -60,19 +67,21 @@
         android:id="@+id/ttv5"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:gravity="center"
         android:text="@string/ttv5"
         android:layout_below="@+id/ttv4"
         android:textSize="30sp"
         android:layout_marginLeft="10dp"/>
 
     <ImageView
-        android:layout_width="342dp"
-        android:layout_height="390dp"
+        android:layout_width="270dp"
+        android:layout_height="314dp"
         android:layout_below="@+id/ttv5"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="56dp"
-        android:layout_marginEnd="41dp"
-        android:layout_marginRight="41dp"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginRight="65dp"
         android:src="@drawable/iconhutech" />
 </RelativeLayout>
