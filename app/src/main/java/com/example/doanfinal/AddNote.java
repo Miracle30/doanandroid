@@ -1,7 +1,9 @@
 package com.example.doanfinal;
 
+import android.app.AlertDialog;
 import android.app.TabActivity;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -78,7 +80,6 @@ public class AddNote extends TabActivity {
         adapter = new NotesAdapter();
         list.setAdapter(adapter);
 
-
         TabHost.TabSpec spec = getTabHost().newTabSpec("tag1");
         spec.setContent(R.id.notes);
         spec.setIndicator("List",getResources().getDrawable(R.drawable.list));
@@ -91,6 +92,31 @@ public class AddNote extends TabActivity {
         getTabHost().addTab(spec);
 
         getTabHost().setCurrentTab(0);
+
+        list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+
+                final int quangngu = position;
+                new AlertDialog.Builder(AddNote.this)
+
+                        .setIcon(android.R.drawable.ic_delete)
+                        .setTitle("Are you sure ?")
+                        .setMessage("Do you want to delete this item")
+                        .setNegativeButton("yes", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                                ListNote.remove(quangngu);
+                                adapter.notifyDataSetChanged();
+                            }
+                        })
+                        //PositiveButton
+                        .setPositiveButton("No", null)
+                        .show();
+                return true;
+            }
+        });
 
     }
     private final View.OnClickListener onSave = new View.OnClickListener() {

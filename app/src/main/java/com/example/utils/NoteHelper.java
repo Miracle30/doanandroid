@@ -66,57 +66,5 @@ public class NoteHelper extends SQLiteOpenHelper {
     }
 
 
-//
-//    //update cong viec
-//    public void updateTask(int id , String task){
-//        db = this.getWritableDatabase();
-//        ContentValues values = new ContentValues();
-//        values.put(COL_2 , task);
-//        db.update(TABLE_NAME , values , "ID=?" , new String[]{String.valueOf(id)});
-//    }
-//
-//    //update trang thai
-//    public void updateStatus(int id , int status){
-//        db = this.getWritableDatabase();
-//        ContentValues values = new ContentValues();
-//        values.put(COL_3 , status);
-//        db.update(TABLE_NAME , values , "ID=?" , new String[]{String.valueOf(id)});
-//    }
-//
-//    //xoa cong viec
-//    public void deleteTask(int id ){
-//        db = this.getWritableDatabase();
-//        db.delete(TABLE_NAME , "ID=?" , new String[]{String.valueOf(id)});
-//    }
-//
-//    //get all task
-//    public List<TaskModel> getAllTasks(){
-//
-//        db = this.getWritableDatabase();
-//        Cursor cursor = null;
-//        List<TaskModel> modelList = new ArrayList<>();
-//
-//        db.beginTransaction();
-//        try {
-//            cursor = db.query(TABLE_NAME , null , null , null , null , null , null);
-//            if (cursor !=null){
-//                if (cursor.moveToFirst()){
-//                    do {
-//                        TaskModel task = new TaskModel();
-//                        task.setId(cursor.getInt(cursor.getColumnIndex(COL_1)));
-//                        task.setTask(cursor.getString(cursor.getColumnIndex(COL_2)));
-//                        task.setStatus(cursor.getInt(cursor.getColumnIndex(COL_3)));
-//                        modelList.add(task);
-//
-//                    }while (cursor.moveToNext());
-//                }
-//            }
-//        }finally {
-//            db.endTransaction();
-//            cursor.close();
-//        }
-//        return modelList;
-//    }
-
 
 }
