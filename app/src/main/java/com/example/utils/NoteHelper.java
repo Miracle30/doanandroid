@@ -19,10 +19,6 @@ public class NoteHelper extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "Note.db";
     private static final String TABLE_NAME = "notes";
     private static final int SCHEMA_VERSION= 1;
-//    private static final String COL_1 = "ID";
-//    private static final String COL_2 = "TASK";
-//    private static final String COL_3 = "STATUS";
-
 
     public NoteHelper(Context context ) {
         super(context, DATABASE_NAME, null, SCHEMA_VERSION);

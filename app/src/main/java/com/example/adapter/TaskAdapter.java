@@ -12,20 +12,19 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.doanfinal.AddTask;
-import com.example.doanfinal.MainActivity;
 import com.example.doanfinal.R;
 import com.example.doanfinal.TodoListActivity;
 import com.example.model.TaskModel;
-import com.example.utils.DatabaseHandler;
+import com.example.utils.TaskHelper;
 
 import java.util.List;
 
 public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.MyViewHolder> {
     private List<TaskModel> mList;
     private TodoListActivity activity;
-    private DatabaseHandler myDB;
+    private TaskHelper myDB;
 
-    public TaskAdapter(DatabaseHandler myDB , TodoListActivity activity){
+    public TaskAdapter(TaskHelper myDB , TodoListActivity activity){
         this.activity = activity;
         this.myDB = myDB;
     }

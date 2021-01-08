@@ -13,7 +13,7 @@ import com.example.model.TaskModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DatabaseHandler extends SQLiteOpenHelper {
+public class TaskHelper extends SQLiteOpenHelper {
 
     private SQLiteDatabase db;
 
@@ -24,7 +24,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String COL_3 = "STATUS";
 
 
-    public DatabaseHandler(@Nullable Context context ) {
+    public TaskHelper(@Nullable Context context ) {
         super(context, DATABASE_NAME, null, 1);
     }
 

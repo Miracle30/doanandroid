@@ -23,7 +23,7 @@ import java.util.List;
 
 public class AddNote extends TabActivity {
 
-    private List<Notes> ListNote = new ArrayList<Notes>();
+    private final List<Notes> ListNote = new ArrayList<Notes>();
     NotesAdapter adapter = null;
     class NotesAdapter extends ArrayAdapter<Notes> {
         public NotesAdapter(Context context, int textViewResourceId) {
@@ -48,7 +48,7 @@ public class AddNote extends TabActivity {
             return row;
         }
     }
-    private AdapterView.OnItemClickListener onListClick = new AdapterView.OnItemClickListener() {
+    private final AdapterView.OnItemClickListener onListClick = new AdapterView.OnItemClickListener() {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
@@ -93,7 +93,7 @@ public class AddNote extends TabActivity {
         getTabHost().setCurrentTab(0);
 
     }
-    private View.OnClickListener onSave = new View.OnClickListener() {
+    private final View.OnClickListener onSave = new View.OnClickListener() {
         public void onClick(View v) {
             String msg = "Successfully add to notes";
             Notes r = new Notes();

@@ -72,7 +72,7 @@ public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback{
         View itemView = viewHolder.itemView;
         int backgroundCornerOffset = 20;
 
-        //luot sang phai
+        //luot set mau
         if (dX > 0) {
             icon = ContextCompat.getDrawable(adapter.getContext(), R.drawable.ic_baseline_delete);
             background = new ColorDrawable(ContextCompat.getColor(adapter.getContext(), R.color.colorDelete));
@@ -85,6 +85,7 @@ public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback{
         int iconMargin = (itemView.getHeight() - icon.getIntrinsicHeight()) / 2;
         int iconTop = itemView.getTop() + (itemView.getHeight() - icon.getIntrinsicHeight()) / 2;
         int iconBottom = iconTop + icon.getIntrinsicHeight();
+
 
         if (dX > 0) {
             int iconLeft = itemView.getLeft() + iconMargin;

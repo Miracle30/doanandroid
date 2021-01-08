@@ -2,35 +2,29 @@ package com.example.doanfinal;
 
 import android.app.Activity;
 import android.content.DialogInterface;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.DialogFragment;
 
 import com.example.model.TaskModel;
-import com.example.utils.DatabaseHandler;
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
+import com.example.utils.TaskHelper;
 
-import java.util.Objects;
-
-public class AddTask  extends BottomSheetDialogFragment {
+public class AddTask  extends DialogFragment {
     public static final String TAG = "AddTask";
 
     EditText mEditText;
     Button mSaveButton;
 
-    private DatabaseHandler myDb;
+    private TaskHelper myDb;
 
     public static AddTask newInstance(){
         return new AddTask();
@@ -50,7 +44,7 @@ public class AddTask  extends BottomSheetDialogFragment {
         mEditText = view.findViewById(R.id.newTaskText);
         mSaveButton = view.findViewById(R.id.newTaskButton);
 
-        myDb = new DatabaseHandler(getActivity());
+        myDb = new TaskHelper(getActivity());
 
         boolean isUpdate = false;
 

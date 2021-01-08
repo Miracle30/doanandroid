@@ -11,20 +11,19 @@ import android.view.View;
 
 import com.example.adapter.TaskAdapter;
 import com.example.model.TaskModel;
-import com.example.utils.DatabaseHandler;
+import com.example.utils.TaskHelper;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 
 public class TodoListActivity extends AppCompatActivity implements DialogCloseListener{
 
-    RecyclerView mRecyclerview;
+    RecyclerView taskRV;
     FloatingActionButton fab;
-    private DatabaseHandler myDB;
-    private List<TaskModel> mList;
+    private TaskHelper myDB;
+    private List<TaskModel> ListNote;
     private TaskAdapter adapter;
     ItemTouchHelper itemTouchHelper;
 
@@ -39,17 +38,18 @@ public class TodoListActivity extends AppCompatActivity implements DialogCloseLi
 
     private void addControls() {
         fab = findViewById(R.id.fab);
-        mRecyclerview = findViewById(R.id.taskRV);
-        myDB = new DatabaseHandler(TodoListActivity.this);
-        mList = new ArrayList<>();
+        taskRV = findViewById(R.id.taskRV);
+
+        myDB = new TaskHelper(TodoListActivity.this);
+        ListNote = new ArrayList<>();
         adapter = new TaskAdapter(myDB , TodoListActivity.this);
 
-
-        mRecyclerview.setHasFixedSize(true);
-        mRecyclerview.setLayoutManager(new LinearLayoutManager(this));
-        mRecyclerview.setAdapter(adapter);
+        taskRV.setHasFixedSize(true);
+        taskRV.setLayoutManager(new LinearLayoutManager(this));
+        taskRV.setAdapter(adapter);
 
         itemTouchHelper = new ItemTouchHelper(new RecyclerItemTouchHelper(adapter));
+
     }
 
     private void addEvents() {
@@ -57,22 +57,23 @@ public class TodoListActivity extends AppCompatActivity implements DialogCloseLi
             @Override
             public void onClick(View v) {
                 AddTask.newInstance().show(getSupportFragmentManager() , AddTask.TAG);
+
             }
         });
 
-        mList = myDB.getAllTasks();
-        Collections.reverse(mList);
-        adapter.setTasks(mList);
+        ListNote = myDB.getAllTasks();
+        Collections.reverse(ListNote);
+        adapter.setTasks(ListNote);
 
-        itemTouchHelper.attachToRecyclerView(mRecyclerview);
+        itemTouchHelper.attachToRecyclerView(taskRV);
     }
 
 
     @Override
     public void handleDialogClose(DialogInterface dialog) {
-        mList = myDB.getAllTasks();
-        Collections.reverse(mList);
-        adapter.setTasks(mList);
+        ListNote = myDB.getAllTasks();
+        Collections.reverse(ListNote);
+        adapter.setTasks(ListNote);
         adapter.notifyDataSetChanged();
     }
 
