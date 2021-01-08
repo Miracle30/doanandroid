@@ -41,7 +41,7 @@ public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback{
             builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                 @Override
                 public void onClick(DialogInterface dialog, int which) {
-                    adapter.deletTask(position);
+                    adapter.deleteTask(position);
                 }
             });
 
@@ -86,7 +86,7 @@ public class RecyclerItemTouchHelper extends ItemTouchHelper.SimpleCallback{
         int iconTop = itemView.getTop() + (itemView.getHeight() - icon.getIntrinsicHeight()) / 2;
         int iconBottom = iconTop + icon.getIntrinsicHeight();
 
-        if (dX > 0) { // Luot sang phai
+        if (dX > 0) {
             int iconLeft = itemView.getLeft() + iconMargin;
             int iconRight = itemView.getLeft() + iconMargin + icon.getIntrinsicWidth();
             icon.setBounds(iconLeft, iconTop, iconRight, iconBottom);

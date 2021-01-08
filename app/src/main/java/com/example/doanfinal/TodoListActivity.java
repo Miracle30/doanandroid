@@ -21,66 +21,6 @@ import java.util.Objects;
 
 public class TodoListActivity extends AppCompatActivity implements DialogCloseListener{
 
-//    public RecyclerView taskRecyclerView;
-//    public TaskAdapter taskAdapter;
-//    public List<TaskModel> taskList;
-//    public FloatingActionButton fab;
-//    public DatabaseHandler db;
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_todo_list);
-//
-//        Objects.requireNonNull(getSupportActionBar()).hide();
-//
-//        db = new DatabaseHandler(this);
-////        db.openDb();
-//
-//        taskList = new ArrayList<>();
-//        taskRecyclerView = findViewById(R.id.taskRV);
-//        taskRecyclerView.setHasFixedSize(true);
-//        taskRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-//        taskRecyclerView.setAdapter(taskAdapter);
-//
-//        taskAdapter = new TaskAdapter(db,TodoListActivity.this);
-//
-//        ItemTouchHelper itemTouchHelper = new
-//                ItemTouchHelper(new RecyclerItemTouchHelper(taskAdapter));
-//        itemTouchHelper.attachToRecyclerView(taskRecyclerView);
-//
-//        //button them
-//        fab = findViewById(R.id.fab);
-//        taskList = db.getAllTask();
-//        Collections.reverse(taskList);
-//        taskAdapter.setTasks(taskList);
-//
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                AddTask.newInstance().show(getSupportFragmentManager(), AddTask.TAG);
-//            }
-//        });
-//
-////        TaskModel task = new TaskModel();
-////        task.setTask("Tét ták");
-////        task.setStatus(0);
-////        task.setId(1);
-////
-////        taskList.add(task);
-////        taskList.add(task);
-//
-//        taskAdapter.setTask(taskList);
-//    }
-//
-//    @Override
-//    public void handleDialogClose(DialogInterface dialog) {
-//        taskList = db.getAllTask();
-//        Collections.reverse(taskList);
-//        taskAdapter.setTasks(taskList);
-//        taskAdapter.notifyDataSetChanged();
-//    }
-
     RecyclerView mRecyclerview;
     FloatingActionButton fab;
     private DatabaseHandler myDB;

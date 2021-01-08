@@ -16,6 +16,8 @@ import android.widget.ListView;
 import android.widget.TabHost;
 import android.widget.TextView;
 
+import com.example.model.Notes;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -54,8 +56,8 @@ public class AddNote extends TabActivity {
             EditText note;
             EditText content;
 // Tham chiếu đến các view trong addtask
-            note = (EditText)findViewById(R.id.title3);
-            content = (EditText)findViewById(R.id.addnotes);
+            note = findViewById(R.id.title3);
+            content = findViewById(R.id.addnotes);
 // thiết lập thông tin tương ứng
             note.setText(r.getNote());
             content.setText(r.getContent());
@@ -69,9 +71,9 @@ public class AddNote extends TabActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_note);
 
-        Button save = (Button) findViewById(R.id.Save);
+        Button save = findViewById(R.id.Save);
         save.setOnClickListener(onSave);
-        ListView list = (ListView)findViewById(R.id.notes);
+        ListView list = findViewById(R.id.notes);
         list.setOnItemClickListener(onListClick);
         adapter = new NotesAdapter();
         list.setAdapter(adapter);
@@ -102,8 +104,4 @@ public class AddNote extends TabActivity {
             ListNote.add(r);
         }
     };
-
-
-
 }
-

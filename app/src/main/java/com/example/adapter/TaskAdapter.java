@@ -67,7 +67,7 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.MyViewHolder> 
         notifyDataSetChanged();
     }
 
-    public void deletTask(int position){
+    public void deleteTask(int position){
         TaskModel item = mList.get(position);
         myDB.deleteTask(item.getId());
         mList.remove(position);
