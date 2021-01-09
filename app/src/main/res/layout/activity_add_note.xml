@@ -88,6 +88,11 @@
                             android:text="Save"
                             android:textSize="20dp"
                             />
+                        <Button android:id="@+id/Edit"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:onClick="onEdit"
+                            android:text="Edit" />
                         <!--            <ImageView-->
                         <!--                android:id="@+id/imvSave"-->
                         <!--                android:layout_width="50dp"-->

@@ -27,6 +27,10 @@ public class AddNote extends TabActivity {
 
     private final List<Notes> ListNote = new ArrayList<Notes>();
     NotesAdapter adapter = null;
+
+    private Button Edit;
+
+
     class NotesAdapter extends ArrayAdapter<Notes> {
         public NotesAdapter(Context context, int textViewResourceId) {
             super(context, textViewResourceId);
@@ -65,6 +69,28 @@ public class AddNote extends TabActivity {
             content.setText(r.getContent());
 // sinh viên có thể bổ sung lệnh sau để chuyển view về tab details
             getTabHost().setCurrentTab(1);
+            Edit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Notes r = new Notes();
+                    EditText etnote = findViewById(R.id.title3);
+                    String longg = etnote.getText().toString();
+                    EditText etcontent = findViewById(R.id.addnotes);
+                    String longgg = etcontent.getText().toString();
+//                Notes.note = etnote.getText().toString();
+                    r.setNote(longg);
+                    r.setContent(longgg);
+//                r.setContent(content.getText().toString());
+//
+//                r.setNote();
+//                r.setContent(content);
+
+                    ListNote.remove(position);
+
+                    adapter.notifyDataSetChanged();
+                    ListNote.add(r);
+                }
+            });
         }
     };
 
@@ -75,6 +101,8 @@ public class AddNote extends TabActivity {
 
         Button save = findViewById(R.id.Save);
         save.setOnClickListener(onSave);
+        Edit = (Button) findViewById(R.id.Edit);
+
         ListView list = findViewById(R.id.notes);
         list.setOnItemClickListener(onListClick);
         adapter = new NotesAdapter();
@@ -92,6 +120,8 @@ public class AddNote extends TabActivity {
         getTabHost().addTab(spec);
 
         getTabHost().setCurrentTab(0);
+
+
 
         list.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
